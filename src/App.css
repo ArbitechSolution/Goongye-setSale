@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+.btnConnect {
+  width: 200px;
+  height: 30px;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 10px;
+  color: #fff;
+  background: #28aa73;
+  border: 1px solid #28aa73;
+}
+.inputBox {
+  width: 200px;
+  height: 30px;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 10px;
+}
+.homeContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner {
+  padding: 50px;
+  border: 1px solid rgb(95, 96, 103);
+  background-color: rgb(95, 96, 103);
+  border-radius: 10px;
+}
+.row {
+  margin: 10px;
+}
+.spanTitle {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  color: #fff;
+}
