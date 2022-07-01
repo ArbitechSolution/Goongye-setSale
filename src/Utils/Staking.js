@@ -1,5 +1,5 @@
 export const stakingContractAddress =
-  "0x300c1b46ce4d98b0352850cb68390887c7e27710";
+  "0x3D4c39864A13Cd0a033371DA9d9f1fA5C1011481";
 export const stakingContractAbi = [
   {
     inputs: [
@@ -37,6 +37,19 @@ export const stakingContractAbi = [
     type: "event",
   },
   {
+    inputs: [],
+    name: "NFT",
+    outputs: [
+      {
+        internalType: "contract IERC721",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "uint256[]",
@@ -50,16 +63,40 @@ export const stakingContractAbi = [
     type: "function",
   },
   {
-    inputs: [
+    inputs: [],
+    name: "Token",
+    outputs: [
       {
-        internalType: "address",
-        name: "newOwner",
+        internalType: "contract IERC20",
+        name: "",
         type: "address",
       },
     ],
-    name: "transferOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "Tokenid",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -73,6 +110,40 @@ export const stakingContractAbi = [
     name: "UnStake",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    name: "User",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "totlaWithdrawn",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "withdrawable",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "totalStaked",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "availableToWithdraw",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -185,19 +256,6 @@ export const stakingContractAbi = [
   },
   {
     inputs: [],
-    name: "NFT",
-    outputs: [
-      {
-        internalType: "contract IERC721",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
     name: "owner",
     outputs: [
       {
@@ -271,43 +329,6 @@ export const stakingContractAbi = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "Token",
-    outputs: [
-      {
-        internalType: "contract IERC20",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    name: "Tokenid",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [
       {
         internalType: "address",
@@ -330,34 +351,13 @@ export const stakingContractAbi = [
     inputs: [
       {
         internalType: "address",
-        name: "",
+        name: "newOwner",
         type: "address",
       },
     ],
-    name: "User",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "totlaWithdrawn",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "withdrawable",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "totalStaked",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "availableToWithdraw",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {

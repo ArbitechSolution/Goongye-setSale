@@ -150,7 +150,7 @@ export const Home = () => {
         </div>
         <div className="row mt-3">
           <button className="pesaWasool" onClick={() => handlePesaWasool()}>
-            PesaWasool
+            Klay
           </button>
         </div>
       </div>
