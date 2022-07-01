@@ -1,6 +1,5 @@
-///test net
 export const googyeContractAddress =
-  "0x52db35aC6393aEc5B8572cfde96B38DA4f7D149c";
+  "0xA1C56B25941f59f83f6431Ce1bC671E983c32f42";
 export const goongyeContractAbi = [
   {
     inputs: [],
@@ -140,19 +139,6 @@ export const goongyeContractAbi = [
         type: "uint256",
       },
     ],
-    name: "preSalemint",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_count",
-        type: "uint256",
-      },
-    ],
     name: "publicMint",
     outputs: [],
     stateMutability: "payable",
@@ -214,6 +200,45 @@ export const goongyeContractAbi = [
     name: "safeTransferFrom",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_count",
+        type: "uint256",
+      },
+    ],
+    name: "Sale__1",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_count",
+        type: "uint256",
+      },
+    ],
+    name: "Sale__2",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_count",
+        type: "uint256",
+      },
+    ],
+    name: "Sale__3",
+    outputs: [],
+    stateMutability: "payable",
     type: "function",
   },
   {
@@ -411,25 +436,6 @@ export const goongyeContractAbi = [
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_count",
-        type: "uint256",
-      },
-    ],
-    name: "gPRice",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [],
     name: "init_supply",
     outputs: [
@@ -544,6 +550,19 @@ export const goongyeContractAbi = [
   },
   {
     inputs: [],
+    name: "mintingLimit",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "name",
     outputs: [
       {
@@ -647,19 +666,6 @@ export const goongyeContractAbi = [
         internalType: "uint256",
         name: "",
         type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "preSaleStarted",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
       },
     ],
     stateMutability: "view",
@@ -859,6 +865,25 @@ export const goongyeContractAbi = [
   {
     inputs: [],
     name: "totalMintedAddress",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    name: "totalPreMinted",
     outputs: [
       {
         internalType: "uint256",

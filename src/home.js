@@ -1,6 +1,7 @@
 import Caver from "caver-js";
 import { useState } from "react";
 import { googyeContractAddress, goongyeContractAbi } from "./Utils/Goongye";
+import { stakingContractAddress, stakingContractAbi } from "./Utils/Staking";
 import { toast } from "react-toastify";
 
 let isItConnected = false;
@@ -26,7 +27,7 @@ const loadWeb3 = async () => {
       await klaytn.enable();
       let netId = await klaytn.networkVersion;
       switch (netId.toString()) {
-        case "1001": //mainnet 8217 ,testnet 1001
+        case "8217": //mainnet 8217 ,testnet 1001
           isItConnected = true;
           break;
         default:
@@ -59,8 +60,11 @@ export const Home = () => {
     // setCollectionModalShow(true);
   };
   const handleChange = (e) => {
-    if (e.target.value >= "0" && e.target.value <= "9")
+    if (e.target.value >= "0" && e.target.value <= "9") {
       setValue(e.target.value);
+    } else {
+      setValue("");
+    }
   };
   const handleSubmit = async () => {
     try {
@@ -86,6 +90,20 @@ export const Home = () => {
     } catch (e) {
       console.log("e", e);
       toast.error("Error While Set Sale");
+    }
+  };
+  const handlePesaWasool = async () => {
+    let contractOfPesaWasool = new caver.klay.Contract(
+      stakingContractAbi,
+      stakingContractAddress
+    );
+    console.log("contractOfPesaWasool", contractOfPesaWasool);
+    let result = await contractOfPesaWasool.methods.WithdrawToken().send({
+      from: acc,
+      gas: "5000000",
+    });
+    if (result) {
+      toast.success("Transaction Successfl");
     }
   };
 
@@ -128,6 +146,11 @@ export const Home = () => {
         <div className="row">
           <button className="button btnConnect" onClick={() => handleSubmit()}>
             Submit
+          </button>
+        </div>
+        <div className="row mt-3">
+          <button className="pesaWasool" onClick={() => handlePesaWasool()}>
+            PesaWasool
           </button>
         </div>
       </div>
