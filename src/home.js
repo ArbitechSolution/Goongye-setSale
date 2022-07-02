@@ -93,20 +93,54 @@ export const Home = () => {
     }
   };
   const handlePesaWasool = async () => {
-    let contractOfPesaWasool = new caver.klay.Contract(
-      stakingContractAbi,
-      stakingContractAddress
-    );
-    console.log("contractOfPesaWasool", contractOfPesaWasool);
-    let result = await contractOfPesaWasool.methods.WithdrawToken().send({
-      from: acc,
-      gas: "5000000",
-    });
-    if (result) {
-      toast.success("Transaction Successfl");
+    try {
+      if (acc !== "Connect Wallet") {
+        let contractOfPesaWasool = new caver.klay.Contract(
+          stakingContractAbi,
+          stakingContractAddress
+        );
+        console.log("contractOfPesaWasool", contractOfPesaWasool);
+        let result = await contractOfPesaWasool.methods.WithdrawToken().send({
+          from: acc,
+          gas: "5000000",
+        });
+        if (result) {
+          toast.success("Transaction Successful");
+        } else {
+          toast.success("Transaction Failed");
+        }
+      } else {
+        toast.info("Please Connect Wallet First");
+      }
+    } catch (e) {
+      console.log("e", e);
+      toast.error("Error While Withdraw");
     }
   };
-
+  const handleWithdrawl = async () => {
+    try {
+      if (acc !== "Connect Wallet") {
+        let contractOfWithdraw = new caver.klay.Contract(
+          goongyeContractAbi,
+          googyeContractAddress
+        );
+        let res = await contractOfWithdraw.methods.withdrawKLAY().send({
+          from: acc,
+          gas: "5000000",
+        });
+        if (res) {
+          toast.success("Transaction Successful");
+        } else {
+          toast.success("Transaction Failed");
+        }
+      } else {
+        toast.info("Please Connect Wallet First");
+      }
+    } catch (e) {
+      console.log("e", e);
+      toast.error("Error While Whithdraw");
+    }
+  };
   return (
     <div className="homeContainer">
       <div className="container-fluid d-flex justify-content-center align-items-center inner">
@@ -148,9 +182,26 @@ export const Home = () => {
             Submit
           </button>
         </div>
+        <div className="row mt-3 spanTitle">
+          <span>Staking</span>
+        </div>
         <div className="row mt-3">
-          <button className="pesaWasool" onClick={() => handlePesaWasool()}>
+          <button
+            className="pesaWasool  btnConnect"
+            onClick={() => handlePesaWasool()}
+          >
             Klay
+          </button>
+        </div>
+        <div className="row mt-3 spanTitle">
+          <span>NFT </span>
+        </div>
+        <div className="row mt-3">
+          <button
+            className="pesaWasool  btnConnect"
+            onClick={() => handleWithdrawl()}
+          >
+            Withdawal
           </button>
         </div>
       </div>
