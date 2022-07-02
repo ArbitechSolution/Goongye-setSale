@@ -190,7 +190,7 @@ export const Home = () => {
             className="pesaWasool  btnConnect"
             onClick={() => handlePesaWasool()}
           >
-            Klay
+            Maguni
           </button>
         </div>
         <div className="row mt-3 spanTitle">
@@ -201,7 +201,7 @@ export const Home = () => {
             className="pesaWasool  btnConnect"
             onClick={() => handleWithdrawl()}
           >
-            Withdawal
+            Klay
           </button>
         </div>
       </div>
